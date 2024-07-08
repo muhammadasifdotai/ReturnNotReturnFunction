@@ -96,33 +96,111 @@
 
 /// 5. Object
 
-import React from "react";
-import { Text, View } from "react-native";
+// import React from "react";
+// import { Text, View } from "react-native";
 
-export default function App(): JSX.Element {
-  interface Person {
-    name: string;
-    age: number;
-  }
+// export default function App(): JSX.Element {
+//   interface Person {
+//     name: string;
+//     age: number;
+//   }
   
-  function getObject(): Person {
-    return { name: "Asif", age: 26 };
-  }
+//   function getObject(): Person {
+//     return { name: "Asif", age: 26 };
+//   }
   
-  const objectResult = getObject();
+//   const objectResult = getObject();
 
-  return (
-    <View>
-      <Text>Alhamdulillah</Text>
-      <Text>Result of getObject function:</Text>
-      <Text>Name: {objectResult.name}</Text>
-      <Text>Age: {objectResult.age}</Text>
-    </View>
-  );
-}
+//   return (
+//     <View>
+//       <Text>Alhamdulillah</Text>
+//       <Text>Result of getObject function:</Text>
+//       <Text>Name: {objectResult.name}</Text>
+//       <Text>Age: {objectResult.age}</Text>
+//     </View>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ////////// Functions that Do Not Return Anything (Void Functions) /////////
 
+// 1. Function that logs a message (returns void):
+// const logMessage = (): void => {
+//   console.log("This is a log message.");
+// };
+
+// logMessage(); // Output: This is a log message.
 
 
+
+
+
+
+// 2. Function that increments a counter (returns void):
+import React, { useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+export default function CounterApp(): JSX.Element {
+  const [counter, setCounter] = useState(0);
+
+  const incrementCounter = (): void => {
+    setCounter(counter + 1);
+    console.log('Counter:', counter);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>{counter}</Text>
+      <TouchableOpacity style={styles.button} onPress={incrementCounter}>
+        <Text style={styles.buttonText}>Increment</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 40,
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: 'blue',
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 20,
+  },
+});
